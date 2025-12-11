@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3303H | Innovation. Elevated.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-bg: #000000;
+            --light-bg: #1a1a1a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --accent-color: #3f6e9b; 
+            --text-color: #f5f5f7;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Faint Glow Effect --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 10%, rgba(63, 110, 155, 0.1), transparent 70%); 
+            pointer-events: none; 
+            z-index: -1; 
+            opacity: 0.8; 
+        }
+
+        /* --- Glass Navbar (Fixed) --- */
+        .navbar-glass {
+            backdrop-filter: blur(20px) saturate(200%);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+        }
+        .nav-link { color: var(--text-color) !important; transition: color 0.3s; }
+        .nav-link:hover { color: var(--accent-color) !important; }
+
+        /* --- Long Scroll Sections --- */
+        .full-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        /* --- Typography & Headings --- */
+        .display-apple {
+            font-size: clamp(3rem, 7vw, 7rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin: 0;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+        }
+        .display-apple-sub {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 300;
+            color: var(--accent-color);
+        }
+
+        /* --- Glass Card (Flexbox) --- */
+        .glass-card {
+            background-color: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(63, 110, 155, 0.3); 
+        }
+
+        /* --- Image Styling --- */
+        .img-feature {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease;
+            max-width: 100%; 
+            height: auto;
+        }
+        
+        /* --- Text Visibility Fix inside glass cards --- */
+        .glass-card .text-muted, .glass-card .lead {
+            color: #bdbdbd !important;
+        }
+        .glass-card h4 {
+            color: var(--text-color);
+        }
+        .glass-card .h1 {
+             color: var(--accent-color);
+        }
+
+        /* --- Custom Divider --- */
+        .divider {
+            height: 1px;
+            width: 80%;
+            margin: 50px auto;
+            background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">3303H</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#section-robot">Robot</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-metrics">Metrics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-tech">Tech</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section-team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid px-0">
+
+        <section id="section-hero" class="full-section text-center">
+            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+                <h1 class="display-apple mb-3">
+                    <span style="color: var(--accent-color);">3303H.</span> Engineered for Tomorrow.
+                </h1>
+                <h2 class="display-apple-sub mb-4">
+                    The pinnacle of VEX V5 innovation.
+                </h2>
+                <a href="#section-robot" class="btn btn-lg rounded-pill" style="background-color: var(--accent-color); color: var(--dark-bg); font-weight: 600;">Explore the Build <i class="bi bi-chevron-down"></i></a>
+            </div>
+        </section>
+
+        <section id="section-robot" class="full-section d-block">
+            <div class="container text-center py-5">
+                <div class="large-image-container mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.imgur.com/GjT5B4X.jpg" class="img-fluid img-feature mb-4" alt="VEX V5 Robot Render">
+                </div>
+                
+                <div class="glass-card mx-auto" style="max-width: 800px;" data-aos="fade-up">
+                    <p class="text-uppercase small mb-2" style="color: var(--accent-color); font-weight: 600;">The Current Season</p>
+                    <h3 class="display-apple-sub text-white">
+                        Introducing the Apex Predator.
+                    </h3>
+                    <p class="lead mt-4 text-white">
+                        Every motor, every gear, every line of code optimized for unmatched efficiency and dominance in the arena. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section-features" class="full-section d-block" style="background-color: var(--dark-bg);">
+            <div class="container py-5">
+                <div class="text-center mb-5" data-aos="fade-right">
+                    <h2 class="display-apple" style="font-size: clamp(2rem, 5vw, 5rem);">Unmatched Precision.</h2>
+                    <p class="lead text-muted">A closer look at the key subsystems that define our success.</p>
+                </div>
+
+                <div class="row align-items-center mb-5 pb-5">
+                    <div class="col-md-6 order-md-2" data-aos="fade-left">
+                        <img src="https://i.imgur.com/8Q4H0Xg.jpg" class="img-fluid rounded-4 img-feature p-0" alt="VEX V5 X-Drive Drivetrain">
+                    </div>
+                    <div class="col-md-6 order-md-1" data-aos="fade-right">
+                        <div class="glass-card p-4">
+                            <p class="small text-uppercase" style="color: var(--accent-color);">Component 01</p>
+                            <h3 class="h1 mb-3">X-Drive Agility.</h3>
+                            <p class="lead text-muted">Propelled by four smart motors, the bespoke X-Drive chassis delivers instant omnidirectional movement, granting unparalleled control in complex defensive situations.</p>
+                            <p class="small text-uppercase mt-3">PROS C++ | PID CONTROL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="row align-items-center mb-5 pt-5">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <img src="https://i.imgur.com/v0R7Zc8.jpg" class="img-fluid rounded-4 img-feature p-0" alt="VEX V5 Lift Mechanism">
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="glass-card p-4">
+                            <p class="small text-uppercase" style="color: var(--accent-color);">Component 02</p>
+                            <h3 class="h1 mb-3">Zero-Lag Scorer.</h3>
+                            <p class="lead text-muted">A high-ratio lift system designed for maximum vertical reach in minimal time. A custom-tooled passive intake ensures seamless object acquisition and release.</p>
+                            <p class="small text-uppercase mt-3">2-STAGE | CUSTOM RATIO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-metrics" class="full-section text-center" style="background-color: var(--light-bg);">
+            <div class="container py-5" style="max-width: 1000px;">
+                <h2 class="display-apple-sub mb-5" data-aos="fade-up">Measured for Dominance.</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="glass-card p-4">
+                            <h1 class="display-4 mb-1" style="color: var(--accent-color);">1.2m/s</h1>
+                            <p class="text-uppercase small text-white">Peak Velocity</p>
+                            <p class="text-muted small mb-0">Optimized motor torque distribution allows for rapid cross-field transit.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="glass-card p-4">
+                            <h1 class="display-4 mb-1" style="color: var(--accent-color);">95%</h1>
+                            <p class="text-uppercase small text-white">Autonomous Success Rate</p>
+                            <p class="text-muted small mb-0">Consistent code performance verified across over 50 test runs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="glass-card p-4">
+                            <h1 class="display-4 mb-1" style="color: var(--accent-color);">2.5s</h1>
+                            <p class="text-uppercase small text-white">Scoring Cycle Time</p>
+                            <p class="text-muted small mb-0">From acquisition to object release—a competitive advantage in teleop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-blueprint" class="full-section d-block" style="background-color: var(--dark-bg);">
+            <div class="container py-5">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-apple" style="font-size: clamp(2rem, 5vw, 5rem);">The Blueprint.</h2>
+                    <p class="lead text-muted">Technical schematics reveal the structural integrity and component placement.</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-md-2" data-aos="fade-left">
+                        <div class="glass-card p-4">
+                            <p class="small text-uppercase" style="color: var(--accent-color);">Structural Detail</p>
+                            <h3 class="h2 mb-3">FEA Tested Chassis.</h3>
+                            <p class="lead text-muted">The chassis was subjected to Finite Element Analysis (FEA) to minimize weight while maximizing torsional rigidity. This ensures stability under maximum load and acceleration.</p>
+                            <p class="small text-uppercase mt-3">CUSTOM WELDING | LIGHTWEIGHT ALUMINUM</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-1" data-aos="fade-right">
+                        <img src="https://i.imgur.com/gO2nQ8Q.png" class="img-fluid rounded-4 img-feature p-0" alt="VEX Robot CAD Diagram">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section-game" class="full-section d-block">
+            <div class="container text-center py-5">
+                <div class="large-image-container mb-4" data-aos="zoom-in">
+                    <img src="https://i.imgur.com/39wR4h5.jpg" class="img-fluid img-feature" alt="VEX V5 Competition Field">
+                </div>
+
+                <div class="glass-card mx-auto" style="max-width: 900px;" data-aos="fade-up">
+                    <h2 class="display-apple-sub text-white mb-4">Mastering the Arena.</h2>
+                    <p class="lead text-muted">Our strategy is derived from deep game analysis, utilizing predictive opponent pathing and optimized autonomous paths for maximum point efficiency.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h4 class="mb-1" style="color: var(--accent-color);">Autonomous Domination</h4>
+                            <p class="text-muted small">Consistent 40-point initial scoring routine, 95% reliable.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="mb-1" style="color: var(--accent-color);">Driver Control Synergy</h4>
+                            <p class="text-muted small">Teleop strategy focused on defense neutralization and rapid cycle scoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-tech" class="full-section d-block" style="background-color: var(--dark-bg);">
+            <div class="container py-5">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="display-apple" style="font-size: clamp(2rem, 5vw, 5rem);">Code Is The Core.</h2>
+                    <p class="lead text-muted">Inside the V5 brain: PROS C++, custom PID, and sensor fusion.</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="glass-card p-4">
+                            <p class="small text-uppercase" style="color: var(--accent-color);">The V5 Brain</p>
+                            <h3 class="h1 mb-3">PROS C++ Architecture.</h3>
+                            <p class="lead text-muted">We leverage the power of the PROS platform for low-level, high-performance control. Every motor is managed by custom PID controllers to eliminate oscillation and maximize speed.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="text-white"><i class="bi bi-check-circle-fill" style="color: var(--accent-color);"></i> Sensor Fusion: GPS, Vision & Inertial</li>
+                                <li class="text-white"><i class="bi bi-check-circle-fill" style="color: var(--accent-color);"></i> Async Task Scheduling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <img src="https://i.imgur.com/z4n7wPj.jpg" class="img-fluid rounded-4 img-feature p-0" alt="VEX V5 Brain">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-outreach" class="full-section d-block" style="background-color: var(--light-bg);">
+            <div class="container py-5 text-center">
+                <h2 class="display-apple mb-5" style="font-size: clamp(2rem, 5vw, 5rem);" data-aos="fade-down">Impact Beyond The Field.</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4" data-aos="fade-right">
+                        <div class="glass-card p-4">
+                            <i class="bi bi-rocket-takeoff" style="font-size: 3rem; color: var(--accent-color);"></i>
+                            <h4 class="mt-3 text-white">Community Outreach</h4>
+                            <p class="text-muted small">Hosting workshops and mentoring middle school teams, fostering the next generation of engineers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4" data-aos="fade-left">
+                        <div class="glass-card p-4">
+                            <i class="bi bi-currency-dollar" style="font-size: 3rem; color: var(--accent-color);"></i>
+                            <h4 class="mt-3 text-white">Strategic Sponsorship</h4>
+                            <p class="text-muted small">Partnerships with local tech firms providing capital and professional mentorship.</p>
+                            <div class="mt-3">
+                                <span class="badge rounded-pill bg-secondary text-white">ACME Tech</span>
+                                <span class="badge rounded-pill bg-secondary text-white">Innovate Corp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-process" class="full-section text-center" style="background-color: var(--dark-bg);">
+            <div class="container py-5" style="max-width: 800px;" data-aos="fade-up">
+                <h2 class="display-apple mb-4">Iterative Perfection.</h2>
+                <p class="lead text-muted mb-5">Our robot design follows a strict engineering notebook process: CAD, prototype, test, and refine. It is never finished, only improved.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-bezier2" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        <h4 class="mt-3 text-white">CAD & Modeling</h4>
+                        <p class="text-muted small">Digital simulation minimizes physical waste.</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-tools" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        <h4 class="mt-3 text-white">Fabrication</h4>
+                        <p class="text-muted small">Precision cutting and assembly ensures repeatability.</p>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-graph-up-arrow" style="font-size: 3rem; color: var(--accent-color);"></i>
+                        <h4 class="mt-3 text-white">Telemetry & Testing</h4>
+                        <p class="text-muted small">Data-driven decisions for performance tuning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-vision" class="full-section text-center" style="background-color: var(--light-bg);">
+            <div class="container py-5" style="max-width: 900px;" data-aos="fade-zoom-in">
+                <h2 class="display-apple mb-4">The Next Generation.</h2>
+                <p class="lead text-muted mb-5">We are already conceptualizing design principles for the following season—leveraging AI-driven vision processing and kinetic energy recovery systems.</p>
+                <div class="glass-card p-4">
+                    <h4 class="mb-3" style="color: var(--accent-color);">Project Codename: Sentinel</h4>
+                    <p class="text-muted">Focus areas include pneumatics optimization, custom PCB sensor integration, and fully mesh-networked autonomous swarms (for future VEX challenges).</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section-team" class="full-section d-block" style="background-color: var(--dark-bg);">
+            <div class="container py-5">
+                <h2 class="display-apple mb-5 text-center" data-aos="fade-down">The Team. The Future.</h2>
+                <div class="row justify-content-center align-items-center">
+                    
+                    <div class="col-md-6 mb-4" data-aos="fade-right">
+                        <img src="https://i.imgur.com/L7pT1Qc.jpg" class="img-fluid rounded-4 img-feature p-0" alt="VEX Robotics Team Working">
+                    </div>
+
+                    <div class="col-md-6 mb-4" data-aos="fade-left">
+                        <div class="glass-card p-5">
+                            <h4 class="mb-3 text-white">3303H is a collective of builders, programmers, and strategists.</h4>
+                            <p class="lead text-muted">We turn abstract challenges into engineered solutions. Our success is rooted in collaboration and a shared passion for robotics.</p>
+                            <div class="d-flex justify-content-start gap-4 fs-3 mt-4">
+                                <a href="#" class="text-decoration-none" style="color: var(--accent-color);"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="text-decoration-none" style="color: var(--accent-color);"><i class="bi bi-youtube"></i></a>
+                                <a href="mailto:contact@3303h.com" class="text-decoration-none" style="color: var(--accent-color);"><i class="bi bi-envelope-fill"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div> <footer class="text-center text-muted py-3" style="background-color: var(--dark-bg);">
+        <p class="small mb-0">3303H Robotics &copy; 2024 | Innovation Elevated.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        // Settings for smooth, bidirectional scrolling animations
+        disable: false, // enables animations on all devices
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+        
+        // Animation settings
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - NO, we want it on scroll up too
+        mirror: true, // whether elements should animate out while scrolling past them (for bidirectional scrolling)
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+      });
+    </script>
+</body>
+</html>
